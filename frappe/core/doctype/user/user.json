@@ -9,6 +9,8 @@
  "field_order": [
   "user_details_tab",
   "enabled",
+  "otp_secret",
+  "otp_created_time",
   "section_break_3",
   "email",
   "first_name",
@@ -711,6 +713,16 @@
    "label": "Role Profiles",
    "options": "User Role Profile",
    "permlevel": 1
+  },
+  {
+   "fieldname": "otp_secret",
+   "fieldtype": "Data",
+   "label": "Otp Secret"
+  },
+  {
+   "fieldname": "otp_created_time",
+   "fieldtype": "Datetime",
+   "label": "Otp Created Time"
   }
  ],
  "icon": "fa fa-user",
@@ -773,7 +785,7 @@
    "link_fieldname": "user"
   }
  ],
- "modified": "2024-02-11 13:16:29.574666",
+ "modified": "2024-03-03 16:47:52.676643",
  "modified_by": "Administrator",
  "module": "Core",
  "name": "User",

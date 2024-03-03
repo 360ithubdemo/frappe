@@ -116,28 +116,28 @@
 	{% endif %}
 </div>
 <script>
-	/**document.addEventListener("DOMContentLoaded", function() {
+	document.addEventListener("DOMContentLoaded", function() {
 		var loginCheckbox = document.getElementById('login_with_mobile_checkbox');
 		var newDiv = document.querySelector('.new');
 		var mobileDiv = document.querySelector('.mobile');
-		//var mobilebuttonDiv = document.querySelector('.btn-login-mobile');
-		//var loginbutton = document.querySelector('.btn-login');
+		var mobilebuttonDiv = document.querySelector('.btn-login-mobile');
+		var loginbutton = document.querySelector('.btn-login');
 
-		// Show the mobile div and hide the new div by default
+		 //Show the mobile div and hide the new div by default
 		newDiv.style.display = 'none';
 		mobileDiv.style.display = 'block';
-		//mobilebuttonDiv.style.display = 'block';
-		//loginbutton.style.display = 'none';
+		mobilebuttonDiv.style.display = 'block';
+		loginbutton.style.display = 'none';
 
 		// Add an event listener to the checkbox
 		loginCheckbox.addEventListener('change', function() {
 			// If the checkbox is checked, hide the mobile div and show the new div, otherwise show the mobile div and hide the new div
 			mobileDiv.style.display = this.checked ? 'none' : 'block';
 			newDiv.style.display = this.checked ? 'block' : 'none';
-			//mobilebuttonDiv.style.display = this.checked ? 'none' : 'block';
-			//loginbutton.style.display = this.checked ? 'block' : 'none';
+			mobilebuttonDiv.style.display = this.checked ? 'none' : 'block';
+			loginbutton.style.display = this.checked ? 'block' : 'none';
 		});
-	});**/
+	});
 </script>
 
 {% endmacro %}
