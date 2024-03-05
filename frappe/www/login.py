@@ -19,7 +19,7 @@ no_cache = True
 
 def get_context(context):
     redirect_to = frappe.local.request.args.get("redirect-to")
-    if cint(frappe.get_system_settings("mobile_number")):
+    if cint(frappe.get_system_settings("login_using_mobile_number_with_otp")):
         context["allow_login_using_mobile_number"] = True
 
     # if cint(frappe.get_system_settings("login_ui_page")):
@@ -35,7 +35,10 @@ def get_context(context):
         if redirect_to != "login":
             frappe.local.flags.redirect_location = redirect_to
             raise frappe.Redirect
-
+    login_image = frappe.get_single("Login Image")
+    if login_image and login_image.image_url:
+    # Pass the image URL to the context
+        context["login_image_url"] = login_image.image_url
     context.no_header = True
     context.for_test = "login.html"
     context["title"] = "Login"
@@ -425,3 +428,4 @@ def delete_expired_otp_secrets():
             else:
                 # Provide an alert or log the information
                 print(f"Alert: OTP for user {user.get('name')} is still valid.")
+
